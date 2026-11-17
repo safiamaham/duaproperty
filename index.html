@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dua Property Junction | Real Estate Agency Karachi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(6, 78, 59, 0.75), rgba(4, 47, 46, 0.85)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Top Contact & Hours Banner -->
+    <div class="bg-emerald-900 text-emerald-100 text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+                <span><i class="fas fa-map-marker-alt text-gold-400 mr-1.5"></i> Plot A6, Sector 3A, Gulshan-e-Mehran, Karachi</span>
+                <span class="hidden md:inline">|</span>
+                <span><i class="fas fa-clock text-gold-400 mr-1.5"></i> Mon-Sun: 10AM - 8PM (Closed Friday)</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+923333702976" class="hover:text-gold-400 transition"><i class="fas fa-phone-alt text-gold-400 mr-1"></i> +92 333 3702976</a>
+                <span class="bg-gold-500 text-emerald-950 px-2 py-0.5 rounded-full font-bold text-xs"><i class="fas fa-star mr-1"></i> 5.0 (4 Google Reviews)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3">
+                    <div class="w-11 h-11 bg-emerald-800 rounded-xl flex items-center justify-center text-gold-400 shadow-lg font-bold text-xl">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold tracking-tight text-emerald-950 block leading-none">DUA PROPERTY</span>
+                        <span class="text-xs font-semibold tracking-widest text-emerald-600 uppercase">Junction • Karachi</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-gray-700">
+                    <a href="#properties" class="hover:text-emerald-600 transition">Properties</a>
+                    <a href="#services" class="hover:text-emerald-600 transition">Services</a>
+                    <a href="#about" class="hover:text-emerald-600 transition">About Us</a>
+                    <a href="#valuation" class="hover:text-emerald-600 transition">Property Valuation</a>
+                    <a href="#contact" class="hover:text-emerald-600 transition">Contact</a>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="https://wa.me/923333702976?text=Hi%20Dilshad%20Memon,%20I%20found%20Dua%20Property%20Junction%20online%20and%20want%20to%20discuss%20a%20property." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-xl font-semibold shadow-md transition flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i> WhatsApp Dilshad
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-emerald-600 focus:outline-none p-2">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-3 pb-5 space-y-3 shadow-lg">
+            <a href="#properties" class="block font-medium text-gray-700 hover:text-emerald-600 py-1">Properties</a>
+            <a href="#services" class="block font-medium text-gray-700 hover:text-emerald-600 py-1">Services</a>
+            <a href="#about" class="block font-medium text-gray-700 hover:text-emerald-600 py-1">About Us</a>
+            <a href="#valuation" class="block font-medium text-gray-700 hover:text-emerald-600 py-1">Property Valuation</a>
+            <a href="#contact" class="block font-medium text-gray-700 hover:text-emerald-600 py-1">Contact</a>
+            <a href="https://wa.me/923333702976?text=Hi%20Dilshad%20Memon,%20I%20found%20Dua%20Property%20Junction%20online%20and%20want%20to%20discuss%20a%20property." target="_blank" class="w-full bg-emerald-600 text-white py-3 rounded-xl font-semibold text-center block shadow-md mt-2">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> WhatsApp Dilshad Memon
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg py-20 lg:py-32 px-4 relative text-white">
+        <div class="max-w-5xl mx-auto text-center space-y-6">
+            <span class="inline-flex items-center gap-2 bg-emerald-800/80 border border-emerald-600 text-gold-400 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide backdrop-blur-sm">
+                <i class="fas fa-award"></i> Rated 5.0 / 5 by Verified Clients in Karachi
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                Find Your Dream Property in <span class="text-gold-400">Gulshan-e-Mehran</span> & Karachi
+            </h1>
+            <p class="text-lg sm:text-xl text-emerald-100 max-w-2xl mx-auto font-light">
+                Trusted sales, purchases, and rentals expertise led by <strong class="text-white font-semibold">Dilshad Memon</strong>. Experience absolute transparency and unmatched real estate deals.
+            </p>
+
+            <!-- Interactive Quick Search Card -->
+            <div class="glass-card p-4 sm:p-6 rounded-2xl shadow-2xl max-w-4xl mx-auto mt-10 text-gray-800 text-left">
+                <form id="hero-search-form" onsubmit="filterProperties(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Transaction Type</label>
+                        <select id="search-type" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3 py-2.5 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            <option value="all">All Types</option>
+                            <option value="sale">For Sale</option>
+                            <option value="rent">For Rent</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Location / Area</label>
+                        <select id="search-location" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3 py-2.5 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            <option value="all">All Locations</option>
+                            <option value="Gulshan-e-Mehran">Gulshan-e-Mehran</option>
+                            <option value="Gulshan-e-Iqbal">Gulshan-e-Iqbal</option>
+                            <option value="Gulistan-e-Jauhar">Gulistan-e-Jauhar</option>
+                            <option value="Scheme 33">Scheme 33</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Category</label>
+                        <select id="search-category" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3 py-2.5 text-sm font-medium focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                            <option value="all">Residential & Commercial</option>
+                            <option value="Residential">Residential (House/Plot)</option>
+                            <option value="Commercial">Commercial (Shop/Office)</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end">
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow-md transition flex items-center justify-center gap-2">
+                            <i class="fas fa-search"></i> Search Properties
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Trust Stats Bar -->
+    <section class="bg-white border-b border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="p-4">
+                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-800 mb-1">5.0 ★</div>
+                <div class="text-sm font-medium text-gray-500">Google Rating (4 Reviews)</div>
+            </div>
+            <div class="p-4 border-l border-gray-100">
+                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-800 mb-1">100%</div>
+                <div class="text-sm font-medium text-gray-500">Verified Legal Clearances</div>
+            </div>
+            <div class="p-4 border-l border-gray-100">
+                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-800 mb-1">10+ Years</div>
+                <div class="text-sm font-medium text-gray-500">Karachi Real Estate Expertise</div>
+            </div>
+            <div class="p-4 border-l border-gray-100">
+                <div class="text-3xl sm:text-4xl font-extrabold text-emerald-800 mb-1">24/7</div>
+                <div class="text-sm font-medium text-gray-500">Dedicated Client Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section id="properties" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-emerald-600 font-bold tracking-widest text-xs uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Exclusive Listings</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Featured Properties in Karachi</h2>
+            </div>
+            <div class="mt-4 md:mt-0 flex gap-2 overflow-x-auto pb-2">
+                <button onclick="filterTab('all')" id="btn-all" class="filter-btn active-tab bg-emerald-800 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-sm transition">All</button>
+                <button onclick="filterTab('sale')" id="btn-sale" class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-xl text-sm font-semibold transition">For Sale</button>
+                <button onclick="filterTab('rent')" id="btn-rent" class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-xl text-sm font-semibold transition">For Rent</button>
+            </div>
+        </div>
+
+        <!-- Property Cards Grid -->
+        <div id="properties-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Property 1 -->
+            <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 flex flex-col" data-type="sale" data-location="Gulshan-e-Mehran" data-category="Residential">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa Gulshan-e-Mehran" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow">For Sale</div>
+                    <div class="absolute top-4 right-4 bg-gold-500 text-emerald-950 text-xs font-bold px-3 py-1 rounded-full shadow">Hot Deal</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-emerald-700 font-extrabold text-2xl mb-1">PKR 2.45 Crore</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Brand New Luxury 240 Sq. Yd Bungalow</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-emerald-600"></i> Sector 3A, Gulshan-e-Mehran, Karachi</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 text-center text-sm font-semibold text-gray-600">
+                            <div><i class="fas fa-bed text-emerald-600 mr-1"></i> 4 Beds</div>
+                            <div><i class="fas fa-bath text-emerald-600 mr-1"></i> 5 Baths</div>
+                            <div><i class="fas fa-ruler-combined text-emerald-600 mr-1"></i> 240 Sq.Yd</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <button onclick="openInquiryModal('Luxury 240 Sq.Yd Bungalow, Gulshan-e-Mehran (PKR 2.45 Crore)')" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-2.5 px-4 rounded-xl text-sm transition text-center">
+                            Inquire Now
+                        </button>
+                        <a href="https://wa.me/923333702976?text=Hi%20Dilshad,%20I%20am%20interested%20in%20the%20Brand%20New%20Luxury%20240%20Sq.%20Yd%20Bungalow%20in%20Gulshan-e-Mehran%20priced%20at%20PKR%202.45%20Crore." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2.5 rounded-xl text-center shadow transition" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp text-lg px-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 2 -->
+            <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 flex flex-col" data-type="sale" data-location="Gulshan-e-Iqbal" data-category="Residential">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Apartment in Gulshan-e-Iqbal" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow">For Sale</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-emerald-700 font-extrabold text-2xl mb-1">PKR 1.65 Crore</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Executive 3-Bed Luxury Apartment</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-emerald-600"></i> Block 4, Gulshan-e-Iqbal, Karachi</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 text-center text-sm font-semibold text-gray-600">
+                            <div><i class="fas fa-bed text-emerald-600 mr-1"></i> 3 Beds</div>
+                            <div><i class="fas fa-bath text-emerald-600 mr-1"></i> 3 Baths</div>
+                            <div><i class="fas fa-ruler-combined text-emerald-600 mr-1"></i> 1,650 Sq.Ft</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <button onclick="openInquiryModal('Executive 3-Bed Apartment, Gulshan-e-Iqbal (PKR 1.65 Crore)')" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-2.5 px-4 rounded-xl text-sm transition text-center">
+                            Inquire Now
+                        </button>
+                        <a href="https://wa.me/923333702976?text=Hi%20Dilshad,%20I%20am%20interested%20in%20the%20Executive%203-Bed%20Apartment%20in%20Gulshan-e-Iqbal%20priced%20at%20PKR%201.65%20Crore." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2.5 rounded-xl text-center shadow transition" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp text-lg px-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 3 -->
+            <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 flex flex-col" data-type="rent" data-location="Scheme 33" data-category="Commercial">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Commercial Office Space" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-gold-500 text-emerald-950 text-xs font-bold px-3 py-1 rounded-full uppercase shadow">For Rent</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-emerald-700 font-extrabold text-2xl mb-1">PKR 75,000 <span class="text-xs font-normal text-gray-500">/month</span></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Prime Commercial Office / Showroom</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-emerald-600"></i> Main Boulevard, Scheme 33, Karachi</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 text-center text-sm font-semibold text-gray-600">
+                            <div><i class="fas fa-building text-emerald-600 mr-1"></i> Commercial</div>
+                            <div><i class="fas fa-car text-emerald-600 mr-1"></i> Parking</div>
+                            <div><i class="fas fa-ruler-combined text-emerald-600 mr-1"></i> 600 Sq.Ft</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <button onclick="openInquiryModal('Commercial Office Space, Scheme 33 (PKR 75,000/mo)')" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-2.5 px-4 rounded-xl text-sm transition text-center">
+                            Inquire Now
+                        </button>
+                        <a href="https://wa.me/923333702976?text=Hi%20Dilshad,%20I%20am%20interested%20in%20the%20Commercial%20Office%20Space%20in%20Scheme%2033%20listed%20at%20PKR%2075,000/mo." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2.5 rounded-xl text-center shadow transition" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp text-lg px-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 4 -->
+            <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 flex flex-col" data-type="sale" data-location="Gulshan-e-Mehran" data-category="Residential">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Residential Plot Gulshan-e-Mehran" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow">For Sale</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-emerald-700 font-extrabold text-2xl mb-1">PKR 1.35 Crore</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Leased Residential Plot 120 Sq. Yd</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-emerald-600"></i> Sector 3A, Gulshan-e-Mehran, Karachi</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 text-center text-sm font-semibold text-gray-600">
+                            <div><i class="fas fa-file-contract text-emerald-600 mr-1"></i> Leased</div>
+                            <div><i class="fas fa-road text-emerald-600 mr-1"></i> Wide Road</div>
+                            <div><i class="fas fa-ruler-combined text-emerald-600 mr-1"></i> 120 Sq.Yd</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <button onclick="openInquiryModal('120 Sq.Yd Residential Plot, Gulshan-e-Mehran (PKR 1.35 Crore)')" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-2.5 px-4 rounded-xl text-sm transition text-center">
+                            Inquire Now
+                        </button>
+                        <a href="https://wa.me/923333702976?text=Hi%20Dilshad,%20I%20am%20interested%20in%20the%20120%20Sq.Yd%20Residential%20Plot%20in%20Gulshan-e-Mehran%20priced%20at%20PKR%201.35%20Crore." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2.5 rounded-xl text-center shadow transition" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp text-lg px-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 5 -->
+            <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 flex flex-col" data-type="rent" data-location="Gulistan-e-Jauhar" data-category="Residential">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Rental Portion Jauhar" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-gold-500 text-emerald-950 text-xs font-bold px-3 py-1 rounded-full uppercase shadow">For Rent</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-emerald-700 font-extrabold text-2xl mb-1">PKR 45,000 <span class="text-xs font-normal text-gray-500">/month</span></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Luxury 2-Bed Upper Portion</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-emerald-600"></i> Block 15, Gulistan-e-Jauhar, Karachi</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 text-center text-sm font-semibold text-gray-600">
+                            <div><i class="fas fa-bed text-emerald-600 mr-1"></i> 2 Beds</div>
+                            <div><i class="fas fa-bath text-emerald-600 mr-1"></i> 2 Baths</div>
+                            <div><i class="fas fa-utensils text-emerald-600 mr-1"></i> Kitchen</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <button onclick="openInquiryModal('Luxury 2-Bed Upper Portion, Gulistan-e-Jauhar (PKR 45,000/mo)')" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-2.5 px-4 rounded-xl text-sm transition text-center">
+                            Inquire Now
+                        </button>
+                        <a href="https://wa.me/923333702976?text=Hi%20Dilshad,%20I%20am%20interested%20in%20the%20Luxury%202-Bed%20Upper%20Portion%20in%20Gulistan-e-Jauhar%20at%20PKR%2045,000/mo." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2.5 rounded-xl text-center shadow transition" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp text-lg px-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property 6 -->
+            <div class="property-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition duration-300 flex flex-col" data-type="sale" data-location="Gulshan-e-Mehran" data-category="Commercial">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=800&q=80" alt="Commercial Shop Gulshan-e-Mehran" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase shadow">For Sale</div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-emerald-700 font-extrabold text-2xl mb-1">PKR 95 Lakh</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Corner Commercial Shop</h3>
+                        <p class="text-gray-500 text-sm mb-4 flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-emerald-600"></i> Gulshan-e-Mehran Sector 3A, Karachi</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 border-t border-b border-gray-100 text-center text-sm font-semibold text-gray-600">
+                            <div><i class="fas fa-store text-emerald-600 mr-1"></i> Corner</div>
+                            <div><i class="fas fa-chart-line text-emerald-600 mr-1"></i> High ROI</div>
+                            <div><i class="fas fa-ruler-combined text-emerald-600 mr-1"></i> 350 Sq.Ft</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <button onclick="openInquiryModal('Corner Commercial Shop, Gulshan-e-Mehran (PKR 95 Lakh)')" class="flex-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-2.5 px-4 rounded-xl text-sm transition text-center">
+                            Inquire Now
+                        </button>
+                        <a href="https://wa.me/923333702976?text=Hi%20Dilshad,%20I%20am%20interested%20in%20the%20Corner%20Commercial%20Shop%20in%20Gulshan-e-Mehran%20priced%20at%20PKR%2095%20Lakh." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2.5 rounded-xl text-center shadow transition" title="Chat on WhatsApp">
+                            <i class="fab fa-whatsapp text-lg px-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-emerald-50/60 py-20 border-t border-b border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-700 font-bold tracking-widest text-xs uppercase bg-emerald-100 px-3 py-1 rounded-full">What We Do</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Comprehensive Real Estate Services</h2>
+                <p class="text-gray-600 mt-3">From finding your ideal home to securing profitable commercial investments across Karachi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Property Sales & Purchase</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Expert brokerage for residential bungalows, apartments, and commercial plots in Gulshan-e-Mehran, Scheme 33, and prime Karachi localities with verified title deeds.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Rental & Leasing Solutions</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Helping landlords find reliable tenants and assisting families or businesses in securing ideal rental properties with hassle-free agreement processing.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:-translate-y-1 transition duration-300">
+                    <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Investment & Valuation</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Receive accurate market valuation and profitable investment advisory backed by Dilshad Memon's deep local insight into Karachi's real estate trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Agency & Dilshad Memon Section -->
+    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80" alt="Dua Property Junction Office" class="w-full h-[420px] object-cover">
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-emerald-900 text-white p-6 rounded-2xl shadow-2xl border-2 border-emerald-700 hidden sm:block">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="text-gold-400 text-2xl"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <span class="font-extrabold text-xl">5.0 / 5</span>
+                    </div>
+                    <p class="text-xs text-emerald-200">Verified Client Satisfaction on Google Reviews</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <span class="text-emerald-600 font-bold tracking-widest text-xs uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">About Dua Property Junction</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight">Your Trusted Real Estate Partner in Gulshan-e-Mehran, Karachi</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Conveniently located at <strong class="text-gray-900">Plot no A6, Gulshan-e-Mehran Sector 3A</strong>, Dua Property Junction has built an impeccable reputation for honesty, transparency, and results-driven property advisory.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Led by <strong class="text-gray-900">Dilshad Memon</strong>, our agency specializes in smooth sales, purchases, and rentals. We guide our clients through every step—from property inspection and price negotiation to legal documentation.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <div class="text-emerald-700 font-bold text-lg mb-1"><i class="fas fa-user-tie text-gold-500 mr-2"></i> Dilshad Memon</div>
+                        <p class="text-xs text-gray-500">Lead Consultant & Proprietor</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <div class="text-emerald-700 font-bold text-lg mb-1"><i class="fas fa-phone-alt text-gold-500 mr-2"></i> Direct Contact</div>
+                        <p class="text-xs text-gray-500">+92 333 3702976</p>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="https://wa.me/923333702976?text=Hi%20Dilshad%20Memon,%20I%20would%20like%20to%20visit%20your%20office%20at%20Gulshan-e-Mehran." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md transition">
+                        <i class="fab fa-whatsapp text-lg"></i> Book Appointment with Dilshad Memon
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Valuation & Inquiry Tool Section -->
+    <section id="valuation" class="bg-gradient-to-br from-emerald-900 to-emerald-950 py-20 text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="bg-emerald-800 text-gold-400 font-bold tracking-widest text-xs uppercase px-3 py-1 rounded-full border border-emerald-700">Instant Calculator & Lead Form</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">Free Property Valuation & Quick Inquiry</h2>
+                <p class="text-emerald-200 mt-2">Want to sell, rent, or buy a property in Karachi? Submit your details to get an instant estimate and connect directly with Dilshad Memon on WhatsApp.</p>
+            </div>
+
+            <div class="bg-white text-gray-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <form id="valuation-form" onsubmit="submitValuationForm(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Your Full Name *</label>
+                            <input type="text" id="val-name" required placeholder="e.g. Muhammad Ali" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Phone / WhatsApp Number *</label>
+                            <input type="text" id="val-phone" required placeholder="e.g. 03001234567" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">I want to *</label>
+                            <select id="val-intent" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                                <option value="Sell Property">Sell My Property</option>
+                                <option value="Rent Out Property">Rent Out My Property</option>
+                                <option value="Buy Property">Buy a Property</option>
+                                <option value="Rent a Property">Rent a Property</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Property Type *</label>
+                            <select id="val-property-type" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                                <option value="House / Bungalow">House / Bungalow</option>
+                                <option value="Plot">Plot (Residential/Commercial)</option>
+                                <option value="Apartment / Flat">Apartment / Flat</option>
+                                <option value="Commercial Shop / Office">Commercial Shop / Office</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Area / Location in Karachi *</label>
+                            <input type="text" id="val-location" required placeholder="e.g. Gulshan-e-Mehran Sector 3A" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-2">Additional Details / Size / Expected Price</label>
+                        <textarea id="val-message" rows="3" placeholder="Mention size (e.g. 120 sq yd, 3 beds) or any specific requirements..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg transition text-base flex items-center justify-center gap-2">
+                        <i class="fab fa-whatsapp text-2xl"></i> Send Inquiry Directly to Dilshad Memon (+92 333 3702976)
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews / Testimonials Section -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-emerald-600 font-bold tracking-widest text-xs uppercase bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Client Reviews</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">Trusted by Karachi Property Buyers & Sellers</h2>
+            <div class="flex items-center justify-center gap-1 text-gold-500 text-xl mt-3">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span class="text-gray-800 font-bold ml-2 text-base">5.0 / 5.0 on Google</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <div class="text-gold-500 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        "Dilshad Memon is extremely professional and honest. He helped us buy our plot in Gulshan-e-Mehran without any hassle. All documentation was verified smoothly."
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                    <div class="w-10 h-10 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold">TA</div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-sm">Tariq Ahmed</h4>
+                        <span class="text-xs text-gray-500">Google Reviewer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <div class="text-gold-500 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        "Best real estate agency in Sector 3A Gulshan-e-Mehran. Dilshad bhai gives genuine market rates and deals with utmost transparency. Highly recommended!"
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                    <div class="w-10 h-10 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold">FK</div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-sm">Fahad Khan</h4>
+                        <span class="text-xs text-gray-500">Google Reviewer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <div class="text-gold-500 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                        "Very prompt service for rental properties. Dilshad Memon arranged a great tenant for my commercial shop in no time. Excellent customer care."
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+                    <div class="w-10 h-10 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center font-bold">ZS</div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-sm">Zubair Siddiqui</h4>
+                        <span class="text-xs text-gray-500">Google Reviewer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-emerald-950 text-emerald-100 pt-16 pb-12 border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4 md:col-span-1">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-emerald-800 rounded-xl flex items-center justify-center text-gold-400 font-bold text-xl">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <span class="text-lg font-extrabold text-white tracking-tight">DUA PROPERTY JUNCTION</span>
+                </div>
+                <p class="text-sm text-emerald-300 leading-relaxed">
+                    Your premier real estate agency in Karachi specializing in transparent sales, purchases, and rentals.
+                </p>
+                <div class="pt-2">
+                    <span class="bg-gold-500 text-emerald-950 px-3 py-1 rounded-full text-xs font-extrabold inline-block">
+                        <i class="fas fa-star mr-1"></i> 5.0 Star Rated Agency
+                    </span>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-base mb-4 uppercase tracking-wider text-xs">Quick Links</h4>
+                <ul class="space-y-2.5 text-sm">
+                    <li><a href="#properties" class="hover:text-gold-400 transition">Featured Properties</a></li>
+                    <li><a href="#services" class="hover:text-gold-400 transition">Our Services</a></li>
+                    <li><a href="#about" class="hover:text-gold-400 transition">About Dilshad Memon</a></li>
+                    <li><a href="#valuation" class="hover:text-gold-400 transition">Property Valuation</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-base mb-4 uppercase tracking-wider text-xs">Areas of Operation</h4>
+                <ul class="space-y-2.5 text-sm text-emerald-300">
+                    <li>Gulshan-e-Mehran (Sector 3A)</li>
+                    <li>Gulshan-e-Iqbal</li>
+                    <li>Gulistan-e-Jauhar</li>
+                    <li>Scheme 33 Karachi</li>
+                    <li>Surrounding Karachi Localities</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-base mb-4 uppercase tracking-wider text-xs">Contact & Office</h4>
+                <ul class="space-y-3 text-sm text-emerald-300">
+                    <li class="flex items-start gap-2.5">
+                        <i class="fas fa-map-marker-alt text-gold-400 mt-1"></i>
+                        <span>Plot no A6, Gulshan-e-Mehran Sector 3A, Gulshan-e-Mehran, Karachi</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fas fa-phone-alt text-gold-400"></i>
+                        <a href="tel:+923333702976" class="hover:text-gold-400 font-semibold text-white">+92 333 3702976</a>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fas fa-user-tie text-gold-400"></i>
+                        <span>Contact Person: <strong>Dilshad Memon</strong></span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <i class="fas fa-clock text-gold-400 mt-1"></i>
+                        <span>Mon-Sun: 10:00 AM - 8:00 PM <br><strong class="text-gold-400">Closed Friday</strong></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-emerald-900 text-center text-xs text-emerald-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Dua Property Junction. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart text-gold-400"></i> for Dilshad Memon | Karachi, Pakistan</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/923333702976?text=Hi%20Dilshad%20Memon,%20I%20visited%20Dua%20Property%20Junction%20website%20and%20want%20to%20inquire%20about%20a%20property." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-700 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl transition transform hover:scale-110 flex items-center justify-center" aria-label="WhatsApp Chat">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Inquiry Modal -->
+    <div id="inquiry-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeInquiryModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold w-10 h-10 flex items-center justify-center rounded-full bg-gray-100">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">Direct Inquiry</span>
+                <h3 id="modal-property-title" class="text-xl font-extrabold text-gray-900 mt-2">Property Inquiry</h3>
+                <p class="text-xs text-gray-500 mt-1">Connect instantly with Dilshad Memon via WhatsApp.</p>
+            </div>
+            <form onsubmit="submitModalInquiry(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Your Name *</label>
+                    <input type="text" id="modal-name" required placeholder="Full Name" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Your Phone / WhatsApp *</label>
+                    <input type="text" id="modal-phone" required placeholder="03XXXXXXXXX" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Message / Question</label>
+                    <textarea id="modal-msg" rows="3" placeholder="I am interested in this property. Please share further details." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-xl"></i> Send to WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter tabs for featured properties
+        function filterTab(type) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-800', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-gray-100', 'text-gray-700');
+            });
+
+            const activeBtn = document.getElementById('btn-' + type);
+            activeBtn.classList.remove('bg-gray-100', 'text-gray-700');
+            activeBtn.classList.add('bg-emerald-800', 'text-white', 'shadow-sm');
+
+            const cards = document.querySelectorAll('.property-card');
+            cards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                if (type === 'all' || cardType === type) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Hero search form filtering
+        function filterProperties(e) {
+            e.preventDefault();
+            const type = document.getElementById('search-type').value;
+            const location = document.getElementById('search-location').value;
+            const category = document.getElementById('search-category').value;
+
+            const cards = document.querySelectorAll('.property-card');
+            cards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                const cardLocation = card.getAttribute('data-location');
+                const cardCategory = card.getAttribute('data-category');
+
+                let matchType = (type === 'all' || cardType === type);
+                let matchLocation = (location === 'all' || cardLocation === location);
+                let matchCategory = (category === 'all' || cardCategory === category);
+
+                if (matchType && matchLocation && matchCategory) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Scroll down to properties section
+            document.getElementById('properties').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal Logic
+        let currentSelectedProperty = "";
+
+        function openInquiryModal(propertyTitle) {
+            currentSelectedProperty = propertyTitle;
+            document.getElementById('modal-property-title').innerText = "Inquire: " + propertyTitle;
+            document.getElementById('inquiry-modal').classList.remove('hidden');
+            document.getElementById('inquiry-modal').classList.add('flex');
+        }
+
+        function closeInquiryModal() {
+            document.getElementById('inquiry-modal').classList.remove('flex');
+            document.getElementById('inquiry-modal').classList.add('hidden');
+        }
+
+        function submitModalInquiry(e) {
+            e.preventDefault();
+            const name = document.getElementById('modal-name').value;
+            const phone = document.getElementById('modal-phone').value;
+            const msg = document.getElementById('modal-msg').value;
+
+            const whatsappText = `Hello Dilshad Memon,%0A*Inquiry for:* ${encodeURIComponent(currentSelectedProperty)}%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Message:* ${encodeURIComponent(msg)}`;
+            window.open(`https://wa.me/923333702976?text=${whatsappText}`, '_blank');
+            closeInquiryModal();
+        }
+
+        // Valuation Form WhatsApp Redirect
+        function submitValuationForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('val-name').value;
+            const phone = document.getElementById('val-phone').value;
+            const intent = document.getElementById('val-intent').value;
+            const propType = document.getElementById('val-property-type').value;
+            const location = document.getElementById('val-location').value;
+            const msg = document.getElementById('val-message').value;
+
+            const whatsappText = `Hello Dilshad Memon,%0A*New Property Lead / Valuation Request*%0A*Intent:* ${encodeURIComponent(intent)}%0A*Property Type:* ${encodeURIComponent(propType)}%0A*Location:* ${encodeURIComponent(location)}%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Details:* ${encodeURIComponent(msg)}`;
+            window.open(`https://wa.me/923333702976?text=${whatsappText}`, '_blank');
+        }
+    </script>
+</body>
+</html>
